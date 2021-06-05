@@ -1,17 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { setup } from 'twind'
 import { App } from './App'
+import { css, theme } from 'twind/css'
+import { setup } from 'twind'
 
 setup({
+  preflight: (preflight) => css`
+    ${preflight}
+    body {
+      background-color: ${theme('colors.blue.dark')};
+    }
+  `,
   theme: {
-    colors: {
-      white: 'F0F3F6',
-      darkBlue: '0A1625',
-      lightBlue: 'ACD5F2',
-    },
-    fontFamily: {
-      overpass: 'Overpass',
+    extend: {
+      colors: {
+        white: '#F0F3F6',
+        blue: {
+          dark: '#0A1625',
+          light: '#ACD5F2',
+        },
+      },
+      fontFamily: {
+        overpass: 'Overpass',
+      },
     },
   },
 })

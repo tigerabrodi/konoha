@@ -1,1 +1,3 @@
-export const App = () => <div>Hello World</div>
+import { tw } from 'twind'
+
+export const App = () => <div className={tw`text-white`}>Hello World</div>
