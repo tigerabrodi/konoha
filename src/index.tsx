@@ -9,6 +9,8 @@ setup({
     ${preflight}
     body {
       background-color: ${theme('colors.blue.dark')};
+    }
+    div#root {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
