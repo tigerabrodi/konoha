@@ -1,3 +1,8 @@
 import { tw } from 'twind'
+import { css } from 'twind/css'
 
-export const Home = () => <div className={tw`text-white`}>Hello World</div>
+const styles = css`
+  height: calc(100vh - 8rem);
+`
+
+export const Home = () => <div className={tw(styles)}>Hello World</div>
