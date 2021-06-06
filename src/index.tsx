@@ -9,6 +9,9 @@ setup({
     ${preflight}
     body {
       background-color: ${theme('colors.blue.dark')};
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   `,
   theme: {
@@ -23,6 +26,12 @@ setup({
       fontFamily: {
         overpass: 'Overpass',
       },
+    },
+    screens: {
+      phone: '425px',
+      tablet: '768px',
+      desktop: '1024px',
+      laptop: '1440px',
     },
   },
 })
