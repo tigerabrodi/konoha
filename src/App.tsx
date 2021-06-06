@@ -1,3 +1,3 @@
-import { tw } from 'twind'
+import { Home } from './pages/Home'
 
-export const App = () => <div className={tw`text-white`}>Hello World</div>
+export const App = () => <Home />
