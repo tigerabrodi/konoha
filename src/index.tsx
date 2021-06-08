@@ -14,6 +14,7 @@ setup({
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      font-family: ${theme('fontFamily.overpass')};
     }
   `,
   theme: {
