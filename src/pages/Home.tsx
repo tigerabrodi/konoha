@@ -1,15 +1,8 @@
+import * as React from 'react'
 import { tw } from 'twind'
 import { css } from 'twind/css'
 import { useHistory } from 'react-router'
 import { ReactComponent as KunaiSVG } from 'assets/kunais.svg'
-
-interface FormElements extends HTMLFormControlsCollection {
-  name: HTMLInputElement
-}
-
-interface CharacterFormElement extends HTMLFormElement {
-  readonly elements: FormElements
-}
 
 const containerStyles = css`
   height: calc(100vh - 8rem);
@@ -21,13 +14,14 @@ const containerStyles = css`
 
 export const Home = () => {
   const history = useHistory()
-  const handleSubmit = (event: React.SyntheticEvent<CharacterFormElement>) => {
+  const [name, setName] = React.useState('')
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const { name } = event.currentTarget.elements
-
-    history.push(`/character?name=${name.value}`)
+    history.push(`/character?name=${name}`)
   }
+
+  const isButtonDisabled = name === ''
 
   return (
     <main className={tw(containerStyles)}>
@@ -45,13 +39,16 @@ export const Home = () => {
         <input
           type="text"
           id="search"
+          value={name}
           placeholder="Naruto Uzumaki"
           className={tw`w-64 h-10 placeholder-blue.dark-400 pl-2 focus:outline-none focus:shadow-md bg-white font-bold`}
+          onChange={(event) => setName(event.target.value)}
           required
         />
         <button
           type="submit"
-          className={tw`w-24 h-10 focus:outline-none bg-white text-blue.dark font-bold`}
+          className={tw`w-24 h-10 focus:outline-none bg-white text-blue.dark font-bold disabled:opacity-50`}
+          disabled={isButtonDisabled}
         >
           Search
         </button>
