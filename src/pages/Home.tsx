@@ -1,6 +1,15 @@
 import { tw } from 'twind'
 import { css } from 'twind/css'
+import { useHistory } from 'react-router'
 import { ReactComponent as KunaiSVG } from 'assets/kunais.svg'
+
+interface FormElements extends HTMLFormControlsCollection {
+  name: HTMLInputElement
+}
+
+interface CharacterFormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
 
 const containerStyles = css`
   height: calc(100vh - 8rem);
@@ -11,9 +20,13 @@ const containerStyles = css`
 `
 
 export const Home = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const history = useHistory()
+  const handleSubmit = (event: React.SyntheticEvent<CharacterFormElement>) => {
     event.preventDefault()
-    console.log('handleSubmit')
+
+    const { name } = event.currentTarget.elements
+
+    history.push(`/character?name=${name.value}`)
   }
 
   return (
