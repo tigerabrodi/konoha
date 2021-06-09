@@ -23,7 +23,7 @@ export const Home = () => {
 
   const isButtonDisabled = name === ''
 
-  const buttonDynamicStyles = isButtonDisabled
+  const buttonDisabledStyles = isButtonDisabled
     ? 'cursor-not-allowed'
     : 'tablet:hover:-translate-y-1'
 
@@ -35,7 +35,7 @@ export const Home = () => {
       </p>
       <form
         onSubmit={handleSubmit}
-        className={tw`flex flex-col items-center justify-evenly h-40 w-full tablet:(h-52)`}
+        className={tw`flex flex-col items-center justify-evenly h-40 w-full tablet:(h-56)`}
       >
         <label htmlFor="search" className={tw`sr-only`}>
           Search
@@ -51,7 +51,7 @@ export const Home = () => {
         />
         <button
           type="submit"
-          className={tw`w-24 h-10 focus:outline-none bg-white text-blue.dark font-bold disabled:opacity-50 ${buttonDynamicStyles} transition`}
+          className={tw`w-24 h-10 focus:outline-none bg-white text-blue.dark font-bold disabled:opacity-50 ${buttonDisabledStyles} transition tablet:(h-12 w-28 active:translate-y-1)`}
           disabled={isButtonDisabled}
         >
           Search
@@ -59,7 +59,7 @@ export const Home = () => {
       </form>
       <KunaiSVG
         aria-hidden="true"
-        className={tw`h-24 w-24 tablet:(w-44 h-44)`}
+        className={tw`h-24 w-24 tablet:(w-48 h-48)`}
       />
     </main>
   )
