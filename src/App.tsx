@@ -7,9 +7,6 @@ import { Navigation } from 'components/Navigation'
 
 const client = createClient({
   url: 'https://graphql.anilist.co/',
-  fetchOptions: {
-    method: 'POST',
-  },
 })
 
 export const App = () => (
