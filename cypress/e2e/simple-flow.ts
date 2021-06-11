@@ -12,7 +12,5 @@ it("simple user flow searching for a character", () => {
 
   cy.findByText("Birth: 10/10").should("exist");
 
-  cy.findByText("10161 people loving Naruto Uzumaki on AniList.").should(
-    "exist"
-  );
+  cy.findByText(/people loving Naruto Uzumaki on AniList$/i).should("exist");
 });
