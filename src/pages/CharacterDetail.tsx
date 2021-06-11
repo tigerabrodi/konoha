@@ -4,6 +4,7 @@ import { tw } from 'twind'
 import { css } from 'twind/css'
 import { useQuery } from 'urql'
 import { ReactComponent as KunaiSVG } from 'assets/kunais.svg'
+import { ReactComponent as SpinnerSVG } from 'assets/spinner.svg'
 
 type CharacterResult = {
   Character: {
@@ -60,7 +61,10 @@ export const CharacterDetail = () => {
   if (isLoading) {
     return (
       <main className={tw(containerStyles)}>
-        <h1>Loading...</h1>
+        <SpinnerSVG
+          className={tw`absolute animate-spin h-1/4 fill-current text-white`}
+          aria-label="loading"
+        />
       </main>
     )
   }
