@@ -87,14 +87,16 @@ export const CharacterDetail = () => {
           alt={data?.Character.name.full}
           className={tw`h-2/3`}
         />
-        <h1 className={tw`text-white`}>{data?.Character.name.full}</h1>
-        <p className={tw`text-white`}>
+        <h1 className={tw`text-white tablet:(text-4xl)`}>
+          {data?.Character.name.full}
+        </h1>
+        <p className={tw`text-white tablet:(text-4xl)`}>
           Birth: {data?.Character.dateOfBirth.day}/
           {data?.Character.dateOfBirth.month}
         </p>
       </div>
 
-      <p className={tw`text-white`}>
+      <p className={tw`text-white text-sm tablet:(text-2xl)`}>
         {data?.Character.favourites} people loving {data?.Character.name.full}{' '}
         on AniList
       </p>
