@@ -26,3 +26,7 @@ After cloning the project, you just need to run `yarn` 🔧
 ## License :nerd_face:
 
 Built by Tiger Abrodi under MIT license :two_hearts: 😘.
+
+## Demo
+https://user-images.githubusercontent.com/49603590/122788664-d8e99680-d2b6-11eb-8953-9664d1663201.mp4
+
