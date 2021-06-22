@@ -21,9 +21,9 @@ export const Home = () => {
     history.push(`/character?name=${name}`)
   }
 
-  const isButtonDisabled = name === ''
+  const isNameEmpty = name === ''
 
-  const buttonDisabledStyles = isButtonDisabled
+  const buttonDisabledStyles = isNameEmpty
     ? 'cursor-not-allowed'
     : 'tablet:hover:-translate-y-1'
 
@@ -52,7 +52,7 @@ export const Home = () => {
         <button
           type="submit"
           className={tw`w-24 h-10 focus:outline-none bg-white text-blue.dark font-bold disabled:opacity-50 ${buttonDisabledStyles} transition tablet:(h-12 w-28 active:translate-y-1)`}
-          disabled={isButtonDisabled}
+          disabled={isNameEmpty}
         >
           Search
         </button>
